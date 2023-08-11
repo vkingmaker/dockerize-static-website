@@ -1,0 +1,59 @@
+<!Doctype html>
+<html>
+    <head>
+        <meta charset="utf8">
+        <title>ToolTip Demo</title>
+        <style>
+            body{
+                width: 100%;
+            }
+        span{
+            position:relative;
+            color:seagreen;
+            font-weight:bold;
+            font-family: cursive;
+            font-size:1.2em;
+        }
+        body > div{
+            width:70%;
+            margin:7em auto;
+        }
+        p{
+           text-align: center;
+            margin:5em auto; 
+        }
+        h2{
+            text-align: center;
+        }
+        .tool{
+            cursor:help;
+            /* position:relative; */
+        }
+        .tool::before {
+            content: "";
+            /* border: 1px solid red; */
+            position: absolute;
+            border-style: solid;
+            border-width: 0.6em .75em 0.5em .75em;
+            border-color: #3E474f transparent transparent transparent;
+        }
+        .tool::after {
+            position: absolute;
+            content: attr(data-tip);
+            padding: 1em;
+            bottom: 79%;
+            border-radius: 4px;
+            margin-left: -10.75em;
+            width: 183%;
+            font-size: 0.5em;
+            background: #3E474f;
+        }
+        </style>
+    </head>
+    <body>
+        <div>
+                <h2>A CSS ToolTip Demo</h2>
+                <p>This is simply a tooltip <span class="tool" data-tip="Tooltips are the coolest things since sliced Bread">Demo </span>designed using HTML and CSS</p>
+        </div>
+    </body>
+</html>
